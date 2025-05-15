@@ -7,43 +7,53 @@ t 320.0 485.0 {change failed} n 0 w n {} ne
 p 185.0 450.0 {change result} 0 n
 t 200.0 545.0 {select folder} n 0 w n {} ne
 t 200.0 660.0 {selection failed} n 0 w n {} ne
-t 880.0 450.0 analysis n 0 w n {} ne
-t 705.0 310.0 {stop automatic layout} n 0 w n {} ne
-t 705.0 235.0 {start automatic layout} n 0 w n {} ne
-p 590.0 260.0 {static graph} 0 n
-p 880.0 255.0 {dynamic graph} 0 n
-t 685.0 140.0 reset n 0 w n {} ne
-p 455.0 50.0 {graph completed} 0 n
-t 880.0 50.0 {analysis completed 1} n 0 w n {} ne
+t 1115.0 450.0 analysis n 0 w n {} ne
+t 940.0 310.0 {stop automatic layout} n 0 w n {} ne
+t 940.0 235.0 {start automatic layout 1} n 0 w n {} ne
+p 825.0 260.0 {static graph} 0 n
+p 1115.0 255.0 {dynamic graph} 0 n
+t 1115.0 50.0 {analysis completed 1} n 0 w n {} ne
 t 185.0 50.0 {change dir 2} n 0 w n {} ne
-t 455.0 260.0 {analysis completed 2} n 0 w n {} ne
+t 690.0 260.0 {analysis completed 2} n 0 w n {} ne
 t 315.0 305.0 {change dir 1} n 0 w n {} ne
-e {analysis completed 2} {graph completed} 1 n
-e {static graph} {analysis completed 2} 1 n
-e {change dir 2} {change result} 1 n
-e reset {dynamic graph} 1 n
-e {graph completed} {change dir 2} 1 n
-e {graph completed} reset 1 n
-e {analysis completed 1} {graph completed} 1 n
-e {dynamic graph} {analysis completed 1} 1 n
-e {change failed} {folder selected} 1 n
-e {change succeded} {folder selected} 1 n
-e {change result} {change failed} 1 n
-e {change result} {change succeded} 1 n
-e {change dir 1} {change result} 1 n
-e {no folder selected} {select folder} 1 n
-e {select folder} {select result} 1 n
-e {select result} {selection success} 1 n
-e {select result} {selection failed} 1 n
-e {selection success} {folder selected} 1 n
-e {selection failed} {no folder selected} 1 n
-e {folder selected} {change dir 1} 1 n
-e {folder selected} analysis 1 n
-e analysis {dynamic graph} 1 n
-e {dynamic graph} {stop automatic layout} 1 n
+p 550.0 260.0 {static completed} 0 n
+p 545.0 50.0 {dynamic completed} 0 n
+t 430.0 155.0 {start automatic layout 2} n 0 w n {} ne
+t 645.0 155.0 {stop automatic layout 2} n 0 w n {} ne
+t 940.0 125.0 {restart 1} n 0 w n {} ne
+t 945.0 385.0 {restart 2} n 0 w n {} ne
+e {restart 2} {dynamic graph} 1 n
+e {static completed} {restart 2} 1 n
+e {analysis completed 2} {static completed} 1 n
+e {start automatic layout 2} {dynamic completed} 1 n
+e {static completed} {start automatic layout 2} 1 n
+e {stop automatic layout 2} {static completed} 1 n
+e {dynamic completed} {stop automatic layout 2} 1 n
+e {start automatic layout 1} {dynamic graph} 1 n
+e {static graph} {start automatic layout 1} 1 n
 e {stop automatic layout} {static graph} 1 n
-e {static graph} {start automatic layout} 1 n
-e {start automatic layout} {dynamic graph} 1 n
+e {dynamic graph} {stop automatic layout} 1 n
+e analysis {dynamic graph} 1 n
+e {folder selected} analysis 1 n
+e {folder selected} {change dir 1} 1 n
+e {selection failed} {no folder selected} 1 n
+e {selection success} {folder selected} 1 n
+e {select result} {selection failed} 1 n
+e {select result} {selection success} 1 n
+e {select folder} {select result} 1 n
+e {no folder selected} {select folder} 1 n
+e {change dir 1} {change result} 1 n
+e {change result} {change succeded} 1 n
+e {change result} {change failed} 1 n
+e {change succeded} {folder selected} 1 n
+e {change failed} {folder selected} 1 n
+e {dynamic graph} {analysis completed 1} 1 n
+e {analysis completed 1} {dynamic completed} 1 n
+e {dynamic completed} {restart 1} 1 n
+e {dynamic completed} {change dir 2} 1 n
+e {restart 1} {dynamic graph} 1 n
+e {change dir 2} {change result} 1 n
+e {static graph} {analysis completed 2} 1 n
 h UI normal white bezier
 
 
