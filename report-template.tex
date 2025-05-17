@@ -67,7 +67,7 @@
 
     L'obiettivo principale di questo assignment è lo sviluppo di uno strumento in grado di analizzare le dipendenze tra
     classi Java all'interno di un progetto software. In particolare, questa prima parte si concentra sulla progettazione
-    e implementazione di una libreria asincrona, denominata \texttt{DependencyAnalyzerLib}, che consente di effettuare
+    e implementazione di una libreria asincrona, denominata \\ \texttt{DependencyAnalyzerLib}, che consente di effettuare
     un'analisi gerarchica delle dipendenze tra i file sorgente attraverso l'utilizzo di tre metodi asincroni.
     Dal punto di vista della programmazione concorrente, l’aspetto rilevante è rappresentato dall’uso del framework Vert.x,
     che consente un design asincrono. In particolare:
@@ -127,6 +127,21 @@
     Petri Nets
     \section{Punto 1 - Asynchronous Library}
     \section{Punto 2 - Reactive GUI}
+
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{UI.pdf}
+    \caption{Rete di Petri per il flusso di esecuzione con input dell'utente.}
+    \label{fig:UI}
+    \end{figure}
+
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{reactive_analysis.pdf}
+    \caption{Rete di Petri per il flusso di esecuzione dell'analisi reattiva.}
+    \label{fig:reactive_analysis}
+    \end{figure}
+
     Per lanciare:
     \begin{lstlisting}[style=bash, caption={Avvio dello script}]
 $ mvn clean javafx:run
