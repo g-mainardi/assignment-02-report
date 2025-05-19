@@ -1,0 +1,62 @@
+p 50.0 435.0 {project folder} 1 n
+t 170.0 435.0 getProjDeps n 0 w n {} ne
+p 170.0 320.0 executeBlocking 0 n
+p 350.0 50.0 {subfolder 1} 0 n
+p 1040.0 280.0 ProjDR 0 w
+p 350.0 130.0 {subfolder 2} 0 n
+t 715.0 240.0 {pack error 1} n 0 w n {} ne
+p 615.0 130.0 {Future[PackDR] 2} 0 n
+t 370.0 320.0 {not directory} n 0 w n {} ne
+t 840.0 50.0 {class success 1} n 0 w n {} ne
+p 955.0 50.0 {PackDR 1} 0 n
+t 1040.0 90.0 {success all} n 0 w n {} ne
+p 645.0 320.0 error 0 s
+t 170.0 220.0 {is directory} n 0 w n {} ne
+p 170.0 85.0 directory 0 n
+t 260.0 85.0 walk n 0 w n {} ne
+p 715.0 50.0 {Future[PackDR] 1} 0 n
+t 465.0 130.0 {getPackDeps 2} n 0 w n {} ne
+t 465.0 50.0 {getPackDeps 1} n 0 w n {} ne
+p 955.0 130.0 {PackDR 2} 0 n
+a 285.0 215.0 n0 1 {Deps = dependencies\\nPackDR = PackageDepsReport\\nProjDR   = ProjectDepsReport		}
+t 615.0 240.0 {pack error 2} n 0 w n {} ne
+p 605.0 435.0 {Future[ProjDR]} 0 n
+t 795.0 320.0 onFailure n 0 w n {} ne
+p 905.0 320.0 {handle error} 0 n
+t 1040.0 435.0 onSuccess n 0 w n {} ne
+p 1140.0 435.0 {handle report} 0 n
+t 840.0 130.0 {class success 2} n 0 w n {} ne
+e onFailure {handle error} 1 n
+e onSuccess {handle report} 1 n
+e error onFailure 1 n
+e {Future[ProjDR]} onFailure 1 n
+e {Future[ProjDR]} onSuccess 1 n
+e ProjDR onSuccess 1 n
+e {not directory} error 1 n
+e executeBlocking {not directory} 1 n
+e executeBlocking {is directory} 1 n
+e getProjDeps {Future[ProjDR]} 1 n
+e getProjDeps executeBlocking 1 n
+e {project folder} getProjDeps 1 n
+e {is directory} directory 1 n
+e directory walk 1 n
+e walk {subfolder 1} 1 n
+e walk {subfolder 2} 1 n
+e {subfolder 1} {getPackDeps 1} 1 n
+e {getPackDeps 1} {Future[PackDR] 1} 1 n
+e {subfolder 2} {getPackDeps 2} 1 n
+e {getPackDeps 2} {Future[PackDR] 2} 1 n
+e {success all} ProjDR 1 n
+e {Future[PackDR] 1} {pack error 1} 1 n
+e {Future[PackDR] 2} {pack error 2} 1 n
+e {pack error 1} error 1 n
+e {pack error 2} error 1 n
+e {Future[PackDR] 2} {class success 2} 1 n
+e {class success 2} {PackDR 2} 1 n
+e {Future[PackDR] 1} {class success 1} 1 n
+e {class success 1} {PackDR 1} 1 n
+e {PackDR 1} {success all} 1 n
+e {PackDR 2} {success all} 1 n
+h getProjectDependencies
+
+
